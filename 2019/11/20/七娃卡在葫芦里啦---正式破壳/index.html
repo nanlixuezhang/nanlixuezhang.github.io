@@ -29,8 +29,6 @@
 <link rel="stylesheet" href="/css/main.css"  >
 
 
-  <link rel="stylesheet" href="/lib/fancybox/jquery.fancybox.min.css"  >
-
 
 </head>
 
@@ -96,7 +94,7 @@
 </nav>
 
     <div class="view intro-2" id="background"
-         style="background: url('/img/default.png')no-repeat center center;
+         style="background: url('/img/moon.jpg')no-repeat center center;
            background-size: cover;
            background-attachment: fixed;">
       <div class="full-bg-img">
@@ -212,7 +210,7 @@ CREATE TABLE `mmall_cart` (
     <div class="d-none d-lg-block col-lg-2 toc-container">
       
   <div id="toc">
-    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;TOC</p>
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
     <div id="tocbot"></div>
   </div>
 
@@ -245,7 +243,7 @@ CREATE TABLE `mmall_cart` (
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
         <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -254,7 +252,7 @@ CREATE TABLE `mmall_cart` (
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
           <label data-error="x" data-success="v"
-                 for="local-search-input">keyword</label>
+                 for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
@@ -265,8 +263,9 @@ CREATE TABLE `mmall_cart` (
 
   <footer class="mt-5">
   <div class="text-center py-3">
-   个人博客<a href="https://nanlixuezhang.github.io" target="_blank" rel="nofollow noopener"><b></b></a>
+   叙世<a href="https://nanlixuezhang.github.io" target="_blank" rel="nofollow noopener"><b></b></a>
     <i class="iconfont icon-love"></i>
+    小屋
     <br>
 
     
@@ -396,18 +395,6 @@ CREATE TABLE `mmall_cart` (
   </script>
 
 
-
-  <script src="/lib/fancybox/jquery.fancybox.min.js" ></script>
-  <script>
-    $("#post img:not(.no-zoom img, img[no-zoom])").each(
-      function () {
-        var element = document.createElement("a");
-        $(element).attr("data-fancybox", "images");
-        $(element).attr("href", $(this).attr("src"));
-        $(this).wrap(element);
-      }
-    );
-  </script>
 
 
 
