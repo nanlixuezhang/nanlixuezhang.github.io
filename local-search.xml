@@ -29,7 +29,7 @@
     <link href="undefined2019/11/21/hello/"/>
     <url>2019/11/21/hello/</url>
     
-    <content type="html"><![CDATA[<p>一片来自大晚上的测试文章</p><p>测试功能已完成 明天再试一试其他的</p><p>12.53分</p>]]></content>
+    <content type="html"><![CDATA[<p>一片来自大晚上的测试文章</p>]]></content>
     
     
     
@@ -50,22 +50,19 @@
     <link href="undefined2019/11/20/%E4%B8%83%E5%A8%83%E5%8D%A1%E5%9C%A8%E8%91%AB%E8%8A%A6%E9%87%8C%E5%95%A6---%E6%AD%A3%E5%BC%8F%E7%A0%B4%E5%A3%B3/"/>
     <url>2019/11/20/%E4%B8%83%E5%A8%83%E5%8D%A1%E5%9C%A8%E8%91%AB%E8%8A%A6%E9%87%8C%E5%95%A6---%E6%AD%A3%E5%BC%8F%E7%A0%B4%E5%A3%B3/</url>
     
-    <content type="html"><![CDATA[<p>title: 七娃卡在葫芦里啦—正式破壳</p><h3 id="七娃卡在葫芦里啦—正式破壳"><a href="#七娃卡在葫芦里啦—正式破壳" class="headerlink" title="七娃卡在葫芦里啦—正式破壳"></a>七娃卡在葫芦里啦—正式破壳</h3><p><strong>昨天域名审核通过了，然后在服务器上挂了一个WordPress的博客 给小伙伴体验看了下，感觉有点low，再加上自己又是个小码农,想自己动手做个,大哥给我推荐的是Hexo+github+markdown搭建的博客,也就是现在这个博客网，昨天大晚上躺在床上也不知道该做什么比较好，索性就看了下Hexo博客的使用方法，今天早上就来弄这个博客了 开始在官网下找了npm安装命令 然后中途完成了换主题的时候遇到了 一个非常沙雕的问题,如下图：</strong></p><p>​    </p><p><img src="https://s2.ax1x.com/2019/11/20/MfbYEd.png" srcset="undefined" alt=""></p><p>其中他让我们创建了一个覆盖配置的文件,但是第三条也和平常一样 所以我就直接略过了，当然这个也怪我自己看东西不太仔细 ，所以我们就一直在/theme/fluid/_config.yml下一直在改配置,其实只需要到/_data/fluid_config.yml的文件里面改配置 这样我们每次执行 hexo  g 的时候就会把/_data/fluid_config.yml文件覆盖/theme/fluid/_config.yml文件 所以我一直怎么改都不生效了.</p><p>放个图纪念七娃破壳</p><p><a href="https://imgchr.com/i/MfL9yT" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/11/20/MfL9yT.md.png" srcset="undefined" alt="MfL9yT.md.png"></a></p><p>今天入坑的东西过几天整理在写出来 ，就先到这里了</p><p>接下来是测试代码块功能</p><p>​    </p><pre><code class="mysql">SET NAMES utf8;SET FOREIGN_KEY_CHECKS = 0;-- ------------------------------  Table structure for `mmall_cart`-- ----------------------------DROP TABLE IF EXISTS `mmall_cart`;CREATE TABLE `mmall_cart` (  `id` int(11) NOT NULL AUTO_INCREMENT,  `user_id` int(11) NOT NULL,  `product_id` int(11) DEFAULT NULL COMMENT &#39;商品id&#39;,  `quantity` int(11) DEFAULT NULL COMMENT &#39;数量&#39;,  `checked` int(11) DEFAULT NULL COMMENT &#39;是否选择,1=已勾选,0=未勾选&#39;,  `create_time` datetime DEFAULT NULL COMMENT &#39;创建时间&#39;,  `update_time` datetime DEFAULT NULL COMMENT &#39;更新时间&#39;,  PRIMARY KEY (`id`),  KEY `user_id_index` (`user_id`) USING BTREE) ENGINE=InnoDB AUTO_INCREMENT=146 DEFAULT CHARSET=utf8;</code></pre><p>​                                                                2019年11-20日晚7.30                                                                            </p><p>​                                                                                        七娃记</p>]]></content>
+    <content type="html"><![CDATA[<p><strong>昨天域名审核通过了，然后在服务器上挂了一个WordPress的博客 给小伙伴体验看了下，感觉有点low，再加上自己又是个小码农,想自己动手做个,大哥给我推荐的是Hexo+github+markdown搭建的博客,也就是现在这个博客网，昨天大晚上躺在床上也不知道该做什么比较好，索性就看了下Hexo博客的使用方法，今天早上就来弄这个博客了 开始在官网下找了npm安装命令 然后中途完成了换主题的时候遇到了 一个非常沙雕的问题,如下图：</strong></p><p>​    </p><p><img src="https://s2.ax1x.com/2019/11/20/MfbYEd.png" srcset="undefined" alt=""></p><p>其中他让我们创建了一个覆盖配置的文件,但是第三条也和平常一样 所以我就直接略过了，当然这个也怪我自己看东西不太仔细 ，所以我们就一直在/theme/fluid/_config.yml下一直在改配置,其实只需要到/_data/fluid_config.yml的文件里面改配置 这样我们每次执行 hexo  g 的时候就会把/_data/fluid_config.yml文件覆盖/theme/fluid/_config.yml文件 所以我一直怎么改都不生效了.</p><p>放个图纪念七娃破壳</p><p><a href="https://imgchr.com/i/MfL9yT" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/11/20/MfL9yT.md.png" srcset="undefined" alt="MfL9yT.md.png"></a></p><p>今天入坑的东西过几天整理在写出来 ，就先到这里了</p><p>接下来是测试代码块功能</p><p>​    </p><pre><code class="mysql">SET NAMES utf8;SET FOREIGN_KEY_CHECKS = 0;-- ------------------------------  Table structure for `mmall_cart`-- ----------------------------DROP TABLE IF EXISTS `mmall_cart`;CREATE TABLE `mmall_cart` (  `id` int(11) NOT NULL AUTO_INCREMENT,  `user_id` int(11) NOT NULL,  `product_id` int(11) DEFAULT NULL COMMENT &#39;商品id&#39;,  `quantity` int(11) DEFAULT NULL COMMENT &#39;数量&#39;,  `checked` int(11) DEFAULT NULL COMMENT &#39;是否选择,1=已勾选,0=未勾选&#39;,  `create_time` datetime DEFAULT NULL COMMENT &#39;创建时间&#39;,  `update_time` datetime DEFAULT NULL COMMENT &#39;更新时间&#39;,  PRIMARY KEY (`id`),  KEY `user_id_index` (`user_id`) USING BTREE) ENGINE=InnoDB AUTO_INCREMENT=146 DEFAULT CHARSET=utf8;</code></pre><p>​                                                                2019年11-20日晚7.30                                                                            </p><p>​                                                                                        七娃记</p>]]></content>
     
     
     
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="undefined2019/11/20/hello-world/"/>
-    <url>2019/11/20/hello-world/</url>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+      <tag>测试</tag>
+      
+      <tag>吐槽</tag>
+      
+    </tags>
     
   </entry>
   
