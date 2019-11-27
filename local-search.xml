@@ -4,6 +4,58 @@
   
   
   <entry>
+    <title>Java线程中run()和start()的区别</title>
+    <link href="undefined2019/11/27/Java%E7%BA%BF%E7%A8%8B%E4%B8%ADrun()%E5%92%8Cstart()%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <url>2019/11/27/Java%E7%BA%BF%E7%A8%8B%E4%B8%ADrun()%E5%92%8Cstart()%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    
+    <content type="html"><![CDATA[<p>　　今天看了下Java线程方面视频，然后有个疑问就是线程的run()和start()的区别是怎样子的？<br>　　假如我们创建一个线程  Thread t1 = new Thread()。那么区别如下：<br>t1.run();  只是调用了一个普通方法，并没有启动另一个线程，程序还是会按照顺序执行相应的代码。<br>t1.start();  则表示，重新开启一个线程，不必等待其他线程运行完，只要得到cup就可以运行该线程。<br>　　因为run方法是Runnable接口中定义的，start方法是Thread类定义的。 所有实现Runnable的接口的类都需要重写run方法，run方法是线程默认要执行的方法，有底层源码可知是绑定操作系统的，也是线程执行的入口。 start方法是Thread类的默认执行入口，Thread又是实现Runnable接口的。要使线程Thread启动起来，需要通过start方法，表示线程可执行状态，调用start方法后，则表示Thread开始执行，此时run变成了Thread的默认要执行普通方法。<br>　　<br>　　通过start(）方法，直接调用run()方法可以达到多线程的目的 通常，系统通过调用线程类的start()方法来启动一个线程，此时该线程处于就绪状态，而非运行状态，这也就意味着这个线程可以被JVM来调度执行。在调度过程中，JVM会通过调用线程类的run()方法来完成试机的操作，当run()方法结束之后，此线程就会终止。 如果直接调用线程类的run()方法，它就会被当做一个普通的函数调用，程序中任然只有主线程这一个线程。也就是说，star()方法可以异步地调用run()方法，但是直接调用run()方法确实同步的，因此也就不能达到多线程的目的。 run()和start()的区别可以用一句话概括：单独调用run()方法，是同步执行；通过start()调用run()，是异步执行。<br>　　<br>　　所以我们假设想要开启一个线程的话,就用Thread.start()方法。至于为什么，来来来，我们看看Thread.run()做了哪些事情：<br>　　以下代码摘自JDK1.7.0_79的Thread类：　　</p><pre><code class="java"> /**   * If this thread was constructed using a separate   * Runnable run object, then that   * Runnable object&#39;s run method is called;   * otherwise, this method does nothing and returns.   *    * Subclasses of Thread should override this method.   *   * @see   #start()   * @see   #stop()   * @see   #Thread(ThreadGroup, Runnable, String)   */  @Override  public void run() {    if (target != null) {      target.run();    }  }</code></pre><p>可以看到，Thread.run()就是调用了target.run()，而target是啥呢？起始就是你new Thread时传过来的那个Runnable。<br>这时候你可能会纳闷了，Thread这个类这个run方法就是调用我传的那个Runnable的run方法= =，为什么要这么搞呢？？<br>这就要说java线程的两种创建方式啦，第一种就是new Thread(Runnable target)，实现并传进来一个runnable。关键问题来了，Java线程还有第二种创建方式，就是继承Thread类，并且覆写它的run方法。<br>为什么这两种方式都可以呢？？？</p><h3 id="因为，调用start-后，jvm开始线程时，会在新线程里执行Thread的run方法。覆写当然可以啦，然后，如果你没覆写，传进来一个Runnable的话，Thread的run方法默认实现就是调用你这个runnable的run方法，然后就是你这个Runnable的run方法在新线程里执行了。"><a href="#因为，调用start-后，jvm开始线程时，会在新线程里执行Thread的run方法。覆写当然可以啦，然后，如果你没覆写，传进来一个Runnable的话，Thread的run方法默认实现就是调用你这个runnable的run方法，然后就是你这个Runnable的run方法在新线程里执行了。" class="headerlink" title="因为，调用start()后，jvm开始线程时，会在新线程里执行Thread的run方法。覆写当然可以啦，然后，如果你没覆写，传进来一个Runnable的话，Thread的run方法默认实现就是调用你这个runnable的run方法，然后就是你这个Runnable的run方法在新线程里执行了。"></a>因为，调用start()后，jvm开始线程时，会在新线程里执行Thread的run方法。覆写当然可以啦，然后，如果你没覆写，传进来一个Runnable的话，Thread的run方法默认实现就是调用你这个runnable的run方法，然后就是你这个Runnable的run方法在新线程里执行了。</h3><p>另外，值得思考的是，Thread类，也实现了Runnable接口。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Java</tag>
+      
+      <tag>线程</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hexo搭建个人博客</title>
+    <link href="undefined2019/11/25/%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+    <url>2019/11/25/%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
+    
+    <content type="html"><![CDATA[<p>以前是用的WordPress，然后无意之间发现了Hexo便被这个吸粉了。于是自己就打算启用WordPress转为Hexo，废话不多话下面开始撸起袖子干。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Hexo</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>为什么会写博客？</title>
     <link href="undefined2019/11/22/%E9%9A%8F%E4%BE%BF%E5%86%99%E7%82%B9/"/>
     <url>2019/11/22/%E9%9A%8F%E4%BE%BF%E5%86%99%E7%82%B9/</url>
